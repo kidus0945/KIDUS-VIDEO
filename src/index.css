@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Noto Sans Ethiopic", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-ethiopic: "Noto Sans Ethiopic", "Plus Jakarta Sans", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #050816;
+    background-image:
+      radial-gradient(ellipse 80% 45% at 50% -10%, rgba(37, 99, 235, 0.22), transparent),
+      radial-gradient(ellipse 60% 35% at 85% 15%, rgba(0, 229, 255, 0.1), transparent);
+    background-attachment: fixed;
+  }
+
+  .font-ethiopic {
+    font-family: var(--font-ethiopic);
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
